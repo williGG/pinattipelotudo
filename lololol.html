@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pinatti es guampudo?</title>
+	<style>
+		body {
+			background-color: #87CEFA; /* color celeste */
+		}
+		#content {
+			text-align: center;
+			margin-top: 200px;
+			font-size: 2em;
+		}
+		#no-button {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #FF6347; /* color rojo */
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: all 0.5s ease;
+		}
+		#no-button:hover {
+			transform: translate(-50%, -50%) rotate(10deg);
+		}
+		#yes-button {
+			background-color: #32CD32; /* color verde */
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1>Pinatti es guampudo?</h1>
+		<button id="yes-button">SI</button>
+		<button id="no-button">NO</button>
+	</div>
+
+	<div id="image-section" style="display:none;">
+		<img src="emoticon.jpg" alt="Imagen seleccionada">
+	</div>
+
+	<script>
+		document.getElementById('no-button').addEventListener('click', function() {
+			var elem = document.getElementById('no-button');
+			elem.style.left = Math.floor(Math.random() * (window.innerWidth - elem.offsetWidth)) + 'px';
+			elem.style.top = Math.floor(Math.random() * (window.innerHeight - elem.offsetHeight)) + 'px';
+		});
+
+		document.getElementById('yes-button').addEventListener('click', function() {
+			document.getElementById('content').style.display = 'none';
+			document.getElementById('image-section').style.display = 'block';
+		});
+	</script>
+</body>
+</html>
